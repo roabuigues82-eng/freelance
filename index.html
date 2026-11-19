@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Romina Buigues · Análisis de datos y apps a medida</title>
+<meta name="description" content="Analista de datos freelance en la Comunitat Valenciana: cuadros de mando en Power BI, informes automáticos, alertas y apps a medida para comercios, hostelería y turismo.">
+<meta property="og:title" content="Romina Buigues · Análisis de datos freelance">
+<meta property="og:description" content="Tus números ya cuentan una historia. Yo te ayudo a leerla.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Crect x='3' y='15' width='5' height='10' rx='1.5' fill='%230F766E'/%3E%3Crect x='11.5' y='9' width='5' height='16' rx='1.5' fill='%230F766E' opacity='.7'/%3E%3Crect x='20' y='3' width='5' height='22' rx='1.5' fill='%230E1A24'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FFFFFF}
+a{color:#0E1A24}a:hover{color:#0F766E}
+@keyframes rv{from{opacity:0;transform:translateY(70px) scale(.95)}to{opacity:1;transform:none}}
+@keyframes fl{from{opacity:0;transform:translateX(-90px)}to{opacity:1;transform:none}}
+@keyframes fr{from{opacity:0;transform:translateX(90px)}to{opacity:1;transform:none}}
+@keyframes grow{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes prog{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.bar{transform-origin:bottom;animation:grow 1s cubic-bezier(.2,.8,.2,1) both}
+.bars>div:nth-child(2) .bar{animation-delay:.08s}
+.bars>div:nth-child(3) .bar{animation-delay:.16s}
+.bars>div:nth-child(4) .bar{animation-delay:.24s}
+.bars>div:nth-child(5) .bar{animation-delay:.32s}
+.bars>div:nth-child(6) .bar{animation-delay:.40s}
+.bars>div:nth-child(7) .bar{animation-delay:.48s}
+.float{animation:floaty 6s ease-in-out infinite}
+.lift{transition:translate .25s ease, box-shadow .25s ease}
+.lift:hover{translate:0 -8px;box-shadow:0 22px 44px -22px rgba(14,26,36,.4)}
+.progress{display:none}
+@supports (animation-timeline: view()){
+.reveal{animation:rv linear both;animation-timeline:view();animation-range:entry 0% cover 30%}
+.reveal:nth-child(even){animation-range:entry 15% cover 42%}
+.from-left{animation:fl linear both;animation-timeline:view();animation-range:entry 0% cover 35%}
+.from-right{animation:fr linear both;animation-timeline:view();animation-range:entry 0% cover 35%}
+.progress{display:block;animation:prog linear both;animation-timeline:scroll(root)}
+}
+@media (prefers-reduced-motion: reduce){.reveal,.from-left,.from-right,.bar,.float{animation:none!important}.lift{transition:none}}
+</style>
+<style>html{scroll-behavior:smooth} section[id]{scroll-margin-top:80px} input:focus,textarea:focus{outline:2px solid #0F766E;outline-offset:1px} .form-msg{font-size:15px;margin:0}</style>
+</head>
+<body>
+<div style="font-family: Inter, system-ui, sans-serif; color: #0E1A24; background: #FFFFFF; min-height: 100vh">
+
+  <div class="progress" aria-hidden="true" style="position: fixed; top: 0; left: 0; width: 100%; height: 4px; background: #0F766E; transform-origin: left; z-index: 20"></div>
+  <!-- NAV -->
+  <header style="border-bottom: 1px solid #E4E7EA; position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,0.92); backdrop-filter: blur(8px)">
+    <nav style="max-width: 1200px; margin: 0 auto; padding: 20px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+      <a href="#inicio" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #0E1A24">
+        <svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><rect x="3" y="15" width="5" height="10" rx="1.5" fill="#0F766E"></rect><rect x="11.5" y="9" width="5" height="16" rx="1.5" fill="#0F766E" opacity="0.7"></rect><rect x="20" y="3" width="5" height="22" rx="1.5" fill="#0E1A24"></rect></svg>
+        <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 19px; letter-spacing: -0.01em">Romina Buigues</span>
+      </a>
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 28px; font-size: 15px; font-weight: 500">
+        <a href="#servicios" style="text-decoration: none">Servicios</a>
+        <a href="#casos" style="text-decoration: none">Casos</a>
+        <a href="#proceso" style="text-decoration: none">Cómo trabajo</a>
+        <a href="#seguridad" style="text-decoration: none">Seguridad</a>
+        <a href="#precios" style="text-decoration: none">Precios</a>
+        <a href="#contacto" style="text-decoration: none; color: #FFFFFF; background: #0E1A24; padding: 12px 20px; border-radius: 10px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">Hablemos</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="inicio" style="max-width: 1200px; margin: 0 auto; padding: 88px 24px 96px; display: flex; flex-wrap: wrap; gap: 56px; align-items: center">
+    <div style="flex: 1 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 28px">
+      <span style="align-self: flex-start; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #0F766E">Analista de datos freelance · Business Intelligence</span>
+      <h1 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(40px, 5.2vw, 66px); line-height: 1.04; letter-spacing: -0.03em">Tus números ya cuentan una historia. Yo te ayudo a leerla.</h1>
+      <p style="margin: 0; font-size: 19px; line-height: 1.6; color: #44515C; max-width: 560px">Creo apps a medida para tu negocio, cuadros de mando y análisis con alertas automáticas: tus Excel, cierres de caja y ventas convertidos en avisos y decisiones, sin perder horas copiando y pegando.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 14px">
+        <a href="#contacto" style="text-decoration: none; color: #FFFFFF; background: #0F766E; padding: 16px 26px; border-radius: 12px; font-weight: 600; font-size: 16px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">Reserva una llamada gratuita</a>
+        <a href="#casos" style="text-decoration: none; color: #0E1A24; border: 1.5px solid #0E1A24; padding: 16px 26px; border-radius: 12px; font-weight: 600; font-size: 16px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">Ver casos reales</a>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 10px; padding-top: 8px">
+        <span style="font-size: 13px; font-weight: 500; padding: 7px 12px; border-radius: 999px; background: #F1F3F4">Power BI</span>
+        <span style="font-size: 13px; font-weight: 500; padding: 7px 12px; border-radius: 999px; background: #F1F3F4">Excel avanzado</span>
+        <span style="font-size: 13px; font-weight: 500; padding: 7px 12px; border-radius: 999px; background: #F1F3F4">SQL</span>
+        <span style="font-size: 13px; font-weight: 500; padding: 7px 12px; border-radius: 999px; background: #F1F3F4">Python</span>
+        <span style="font-size: 13px; font-weight: 500; padding: 7px 12px; border-radius: 999px; background: #F1F3F4">Automatización (n8n)</span>
+        <span style="font-size: 13px; font-weight: 500; padding: 7px 12px; border-radius: 999px; background: #F1F3F4">Apps web a medida</span>
+      </div>
+    </div>
+
+    <!-- Hero visual: mini dashboard -->
+    <div class="float" aria-hidden="true" style="flex: 1 1 420px; min-width: 0; background: #0E1A24; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 20px; box-shadow: 0 30px 60px -30px rgba(14,26,36,0.45)">
+      <div style="display: flex; justify-content: space-between; align-items: center">
+        <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 600; color: #FFFFFF; font-size: 16px">Ventas · resumen semanal</span>
+        <span style="font-size: 12px; color: #9AA7B2">Ejemplo ilustrativo</span>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px">
+        <div style="background: #17283A; border-radius: 12px; padding: 14px; display: flex; flex-direction: column; gap: 6px">
+          <span style="font-size: 12px; color: #9AA7B2">Ventas</span>
+          <span style="font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 700; color: #FFFFFF">↑ vs. año ant.</span>
+        </div>
+        <div style="background: #17283A; border-radius: 12px; padding: 14px; display: flex; flex-direction: column; gap: 6px">
+          <span style="font-size: 12px; color: #9AA7B2">Ticket medio</span>
+          <span style="font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 700; color: #FFFFFF">por día</span>
+        </div>
+        <div style="background: #17283A; border-radius: 12px; padding: 14px; display: flex; flex-direction: column; gap: 6px">
+          <span style="font-size: 12px; color: #9AA7B2">Mermas</span>
+          <span style="font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 700; color: #F2B544">alertas</span>
+        </div>
+      </div>
+      <div style="background: #17283A; border-radius: 12px; padding: 18px 18px 12px; display: flex; flex-direction: column; gap: 12px">
+        <div style="display: flex; gap: 16px; font-size: 12px; color: #C3CCD4">
+          <span style="display: flex; align-items: center; gap: 6px"><span style="width: 10px; height: 10px; border-radius: 3px; background: #0F766E"></span>Este año</span>
+          <span style="display: flex; align-items: center; gap: 6px"><span style="width: 10px; height: 10px; border-radius: 3px; background: #4A5D6E"></span>Año anterior</span>
+        </div>
+        <div class="bars" style="height: 150px; display: flex; align-items: flex-end; gap: 10px">
+          <div style="flex: 1; display: flex; align-items: flex-end; gap: 3px; height: 100%"><div class="bar" style="flex: 1; height:48%; background: #4A5D6E; border-radius: 4px 4px 0 0"></div><div class="bar" style="flex: 1; height:55%; background: #0F766E; border-radius: 4px 4px 0 0"></div></div>
+          <div style="flex: 1; display: flex; align-items: flex-end; gap: 3px; height: 100%"><div class="bar" style="flex: 1; height:52%; background: #4A5D6E; border-radius: 4px 4px 0 0"></div><div class="bar" style="flex: 1; height:60%; background: #0F766E; border-radius: 4px 4px 0 0"></div></div>
+          <div style="flex: 1; display: flex; align-items: flex-end; gap: 3px; height: 100%"><div class="bar" style="flex: 1; height:45%; background: #4A5D6E; border-radius: 4px 4px 0 0"></div><div class="bar" style="flex: 1; height:50%; background: #0F766E; border-radius: 4px 4px 0 0"></div></div>
+          <div style="flex: 1; display: flex; align-items: flex-end; gap: 3px; height: 100%"><div class="bar" style="flex: 1; height:58%; background: #4A5D6E; border-radius: 4px 4px 0 0"></div><div class="bar" style="flex: 1; height:70%; background: #0F766E; border-radius: 4px 4px 0 0"></div></div>
+          <div style="flex: 1; display: flex; align-items: flex-end; gap: 3px; height: 100%"><div class="bar" style="flex: 1; height:72%; background: #4A5D6E; border-radius: 4px 4px 0 0"></div><div class="bar" style="flex: 1; height:86%; background: #0F766E; border-radius: 4px 4px 0 0"></div></div>
+          <div style="flex: 1; display: flex; align-items: flex-end; gap: 3px; height: 100%"><div class="bar" style="flex: 1; height:80%; background: #4A5D6E; border-radius: 4px 4px 0 0"></div><div class="bar" style="flex: 1; height:96%; background: #0F766E; border-radius: 4px 4px 0 0"></div></div>
+          <div style="flex: 1; display: flex; align-items: flex-end; gap: 3px; height: 100%"><div class="bar" style="flex: 1; height:38%; background: #4A5D6E; border-radius: 4px 4px 0 0"></div><div class="bar" style="flex: 1; height:42%; background: #0F766E; border-radius: 4px 4px 0 0"></div></div>
+        </div>
+        <div style="display: flex; justify-content: space-between; font-size: 11px; color: #9AA7B2; padding: 0 4px">
+          <span>L</span><span>M</span><span>X</span><span>J</span><span>V</span><span>S</span><span>D</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFERENCIAL -->
+  <section style="background: #0E1A24; color: #FFFFFF">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 72px 24px; display: flex; flex-wrap: wrap; gap: 48px; align-items: center">
+      <h2 class="from-left" style="flex: 1 1 380px; min-width: 0; margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(28px, 3.2vw, 40px); line-height: 1.15; letter-spacing: -0.02em">No vengo solo de los datos. Vengo de dirigir un negocio.</h2>
+      <p class="from-right" style="flex: 1 1 460px; min-width: 0; margin: 0; font-size: 18px; line-height: 1.65; color: #C3CCD4">Desde 2018 dirijo una tienda de retail con un equipo de seis personas, y soy licenciada en Administración y Dirección de Empresas. Sé lo que es cuadrar la caja, controlar mermas, montar horarios y presentar resultados cada mes. Por eso no te entrego gráficos bonitos: te entrego respuestas a las preguntas que de verdad te haces.</p>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" style="max-width: 1200px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 48px">
+    <div class="from-left" style="display: flex; flex-direction: column; gap: 14px; max-width: 680px">
+      <span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #0F766E">Servicios</span>
+      <h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(32px, 3.6vw, 46px); line-height: 1.1; letter-spacing: -0.02em">Lo que puedo hacer por tu negocio</h2>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px">
+      <div class="reveal lift" style="background: #0E1A24; color: #FFFFFF; border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#F2B544" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2.5"></rect><path d="M9 18h6"></path><path d="M9 7h6M9 11h4"></path></svg>
+        <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 21px">Apps a medida para tu negocio</h3>
+        <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #C3CCD4">Diseño la herramienta que tu negocio necesita: registrar la caja, controlar stock o caducidades, organizar turnos. Funciona en el móvil y el ordenador, y tus datos quedan listos para analizar.</p>
+      </div>
+      <div class="reveal lift" style="background: #0E1A24; color: #FFFFFF; border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#F2B544" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg>
+        <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 21px">Alertas que te avisan a tiempo</h3>
+        <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #C3CCD4">Productos a punto de caducar, ventas por debajo del año pasado, recibos o descuadres de caja: te llega el aviso por email o al móvil antes de que se convierta en un problema.</p>
+      </div>
+      <div class="reveal lift" style="border: 1px solid #E4E7EA; border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0F766E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M7 16v-4M12 16V8M17 16v-6"></path></svg>
+        <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 21px">Cuadros de mando en Power BI</h3>
+        <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #44515C">Ventas, ticket medio, márgenes y comparativas con el año anterior en un solo panel que se actualiza solo.</p>
+      </div>
+      <div class="reveal lift" style="border: 1px solid #E4E7EA; border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0F766E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7"></path><path d="M21 4v5h-5"></path></svg>
+        <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 21px">Informes automáticos</h3>
+        <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #44515C">El resumen diario, semanal o mensual llega por email o al Excel de tu gestoría sin que nadie tenga que prepararlo.</p>
+      </div>
+      <div class="reveal lift" style="border: 1px solid #E4E7EA; border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0F766E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h6"></path><path d="m16 16 2 2 4-4"></path></svg>
+        <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 21px">Limpieza y orden de datos</h3>
+        <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #44515C">Uno tus Excel dispersos, extractos y exportaciones del TPV en una base fiable con SQL y Python.</p>
+      </div>
+      <div class="reveal lift" style="border: 1px solid #E4E7EA; border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0F766E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+        <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 21px">Análisis a medida</h3>
+        <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #44515C">Estacionalidad, mermas, horarios de más venta o rentabilidad por producto: una pregunta concreta, una respuesta clara.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASOS -->
+  <section id="casos" style="background: #F4F6F6">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 48px">
+      <div class="from-left" style="display: flex; flex-direction: column; gap: 14px; max-width: 680px">
+        <span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #0F766E">Casos reales</span>
+        <h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(32px, 3.6vw, 46px); line-height: 1.1; letter-spacing: -0.02em">Problemas de negocio que ya he resuelto</h2>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px">
+        <article class="reveal lift" style="background: #FFFFFF; border-radius: 16px; padding: 30px; display: flex; flex-direction: column; gap: 14px">
+          <span style="font-size: 13px; font-weight: 600; color: #5A6772">Retail · Caja</span>
+          <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 22px; line-height: 1.25">Del cierre de caja diario al Excel de la gestoría, sin teclear dos veces</h3>
+          <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #44515C">App web para registrar el cierre cada día que genera automáticamente el informe mensual listo para enviar.</p>
+        </article>
+        <article class="reveal lift" style="background: #FFFFFF; border-radius: 16px; padding: 30px; display: flex; flex-direction: column; gap: 14px">
+          <span style="font-size: 13px; font-weight: 600; color: #5A6772">Retail · Ventas</span>
+          <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 22px; line-height: 1.25">Ventas diarias de varias tiendas, enviadas solas a los responsables</h3>
+          <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #44515C">Automatización que calcula ticket medio y comparativa con el año anterior y la reparte cada mañana.</p>
+        </article>
+        <article class="reveal lift" style="background: #FFFFFF; border-radius: 16px; padding: 30px; display: flex; flex-direction: column; gap: 14px">
+          <span style="font-size: 13px; font-weight: 600; color: #5A6772">Retail · Mermas</span>
+          <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 22px; line-height: 1.25">Control de caducidades y pérdidas con alertas</h3>
+          <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #44515C">Herramienta para registrar fechas de caducidad, anticiparse a la merma y medir lo que se pierde.</p>
+        </article>
+        <article class="reveal lift" style="background: #FFFFFF; border-radius: 16px; padding: 30px; display: flex; flex-direction: column; gap: 14px">
+          <span style="font-size: 13px; font-weight: 600; color: #5A6772">Hostelería</span>
+          <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 22px; line-height: 1.25">Seguimiento de ventas diarias para un restaurante</h3>
+          <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #44515C">App a medida para que el cliente registre y consulte sus ventas día a día de un vistazo.</p>
+        </article>
+        <article class="reveal lift" style="background: #FFFFFF; border-radius: 16px; padding: 30px; display: flex; flex-direction: column; gap: 14px">
+          <span style="font-size: 13px; font-weight: 600; color: #5A6772">Turismo · SQL</span>
+          <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 22px; line-height: 1.25">Estacionalidad turística en la Costa Blanca</h3>
+          <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #44515C">Análisis en SQL de la demanda por temporadas para planificar personal y stock con antelación.</p>
+        </article>
+        <article class="reveal lift" style="background: #FFFFFF; border-radius: 16px; padding: 30px; display: flex; flex-direction: column; gap: 14px">
+          <span style="font-size: 13px; font-weight: 600; color: #5A6772">Planificación de personal</span>
+          <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 22px; line-height: 1.25">Horarios y vacaciones del equipo sin solapes</h3>
+          <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #44515C">Plantilla mensual de turnos y un calendario online donde cada persona elige sus vacaciones y los días ocupados se bloquean solos.</p>
+        </article>
+        <article class="reveal lift" style="background: #FFFFFF; border-radius: 16px; padding: 30px; display: flex; flex-direction: column; gap: 14px">
+          <span style="font-size: 13px; font-weight: 600; color: #5A6772">Power BI · DAX</span>
+          <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 22px; line-height: 1.25">Rentabilidad por hora y optimización de turnos</h3>
+          <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #44515C">Cuadro de mando que cruza ventas y horas trabajadas para ver qué franjas rinden y dónde sobra o falta personal.</p>
+        </article>
+        <article class="reveal lift" style="background: #FFFFFF; border-radius: 16px; padding: 30px; display: flex; flex-direction: column; gap: 14px">
+          <span style="font-size: 13px; font-weight: 600; color: #5A6772">Retail · Recepción</span>
+          <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 22px; line-height: 1.25">Cotejo de albaranes desde el móvil</h3>
+          <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #44515C">Se importa el albarán, se busca cada artículo por código y se marca lo recibido, corrigiendo cantidades cuando no cuadran.</p>
+        </article>
+        <article class="reveal lift" style="background: #FFFFFF; border-radius: 16px; padding: 30px; display: flex; flex-direction: column; gap: 14px">
+          <span style="font-size: 13px; font-weight: 600; color: #5A6772">Multitienda · Google Sheets</span>
+          <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 22px; line-height: 1.25">Control de retiradas para varias tiendas</h3>
+          <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #44515C">Las tiendas registran cada aviso con unos toques y la responsable ve en un panel qué está hecho, quién lo hizo y cuándo.</p>
+        </article>
+      </div>
+      <a class="from-left" href="https://github.com/roabuigues82-eng" style="align-self: flex-start; font-weight: 600; font-size: 16px; display: inline-flex; align-items: center; gap: 8px; min-height: 44px">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4 1.5-4-2-6-2.5M15 22v-3.5a3 3 0 0 0-.9-2.3c3-.3 6.1-1.5 6.1-6.6a5.1 5.1 0 0 0-1.4-3.6 4.8 4.8 0 0 0-.1-3.5s-1.1-.4-3.6 1.4a12.4 12.4 0 0 0-6.6 0C6 1.1 4.9 1.5 4.9 1.5a4.8 4.8 0 0 0-.1 3.5 5.1 5.1 0 0 0-1.4 3.6c0 5.1 3.1 6.3 6.1 6.6A3 3 0 0 0 8.6 17.5V22"></path></svg>
+        Ver más proyectos en mi GitHub
+      </a>
+    </div>
+  </section>
+
+  <!-- PROCESO -->
+  <section id="proceso" style="max-width: 1200px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 48px">
+    <div class="from-left" style="display: flex; flex-direction: column; gap: 14px; max-width: 680px">
+      <span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #0F766E">Cómo trabajo</span>
+      <h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(32px, 3.6vw, 46px); line-height: 1.1; letter-spacing: -0.02em">Cuatro pasos, sin tecnicismos</h2>
+    </div>
+    <ol style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 28px">
+      <li class="reveal" style="display: flex; flex-direction: column; gap: 12px; border-top: 3px solid #0E1A24; padding-top: 20px">
+        <span style="font-family: 'Space Grotesk', sans-serif; font-size: 15px; font-weight: 700; color: #0F766E">01</span>
+        <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 20px">Llamada de 30 minutos</h3>
+        <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #44515C">Me cuentas qué te preocupa y qué datos tienes. Gratis y sin compromiso.</p>
+      </li>
+      <li class="reveal" style="display: flex; flex-direction: column; gap: 12px; border-top: 3px solid #0E1A24; padding-top: 20px">
+        <span style="font-family: 'Space Grotesk', sans-serif; font-size: 15px; font-weight: 700; color: #0F766E">02</span>
+        <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 20px">Propuesta cerrada</h3>
+        <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #44515C">Qué voy a entregar, en cuánto tiempo y por cuánto. Sin sorpresas.</p>
+      </li>
+      <li class="reveal" style="display: flex; flex-direction: column; gap: 12px; border-top: 3px solid #0E1A24; padding-top: 20px">
+        <span style="font-family: 'Space Grotesk', sans-serif; font-size: 15px; font-weight: 700; color: #0F766E">03</span>
+        <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 20px">Construcción y revisión</h3>
+        <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #44515C">Te enseño avances para ajustar sobre la marcha a cómo trabajas tú.</p>
+      </li>
+      <li class="reveal" style="display: flex; flex-direction: column; gap: 12px; border-top: 3px solid #0E1A24; padding-top: 20px">
+        <span style="font-family: 'Space Grotesk', sans-serif; font-size: 15px; font-weight: 700; color: #0F766E">04</span>
+        <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 20px">Entrega y formación</h3>
+        <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #44515C">Te explico cómo usarlo para que no dependas de mí en el día a día.</p>
+      </li>
+    </ol>
+  </section>
+
+  <!-- SEGURIDAD -->
+  <section id="seguridad" style="background: #0E1A24; color: #FFFFFF">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 48px">
+      <div style="display: flex; flex-wrap: wrap; gap: 32px 56px; align-items: flex-end">
+        <div class="from-left" style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+          <span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #F2B544">Seguridad y confidencialidad</span>
+          <h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(32px, 3.6vw, 46px); line-height: 1.1; letter-spacing: -0.02em">Tus datos son tuyos. Yo solo los cuido.</h2>
+        </div>
+        <p class="from-right" style="flex: 1 1 420px; min-width: 0; margin: 0; font-size: 18px; line-height: 1.65; color: #C3CCD4">Sé lo delicado que es abrir las ventas, la caja o los datos de clientes de tu negocio a alguien de fuera. Por eso trabajo con estas garantías desde el primer día, por escrito.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px">
+        <div class="reveal lift" style="background: #17283A; border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 12px">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#F2B544" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5"></path><path d="m9 15 2 2 4-4"></path></svg>
+          <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 20px">Acuerdo de confidencialidad</h3>
+          <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #C3CCD4">Firmamos un acuerdo de confidencialidad (NDA) antes de que me compartas ningún dato.</p>
+        </div>
+        <div class="reveal lift" style="background: #17283A; border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 12px">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#F2B544" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"></path></svg>
+          <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 20px">Cumplimiento del RGPD</h3>
+          <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #C3CCD4">Si hay datos personales, firmamos un contrato de encargado del tratamiento según el RGPD y la LOPDGDD.</p>
+        </div>
+        <div class="reveal lift" style="background: #17283A; border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 12px">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#F2B544" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"></path><path d="M3 3l18 18"></path></svg>
+          <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 20px">Solo los datos necesarios</h3>
+          <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #C3CCD4">Pido el mínimo imprescindible, con acceso de solo lectura, y anonimizo nombres y datos de clientes siempre que el análisis lo permite.</p>
+        </div>
+        <div class="reveal lift" style="background: #17283A; border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 12px">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#F2B544" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg>
+          <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 20px">Transferencia y almacenamiento cifrados</h3>
+          <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #C3CCD4">Nada de archivos por WhatsApp ni USB: canales cifrados, contraseñas fuertes y verificación en dos pasos en todas mis cuentas.</p>
+        </div>
+        <div class="reveal lift" style="background: #17283A; border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 12px">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#F2B544" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"></path><path d="M5 21V8l7-5 7 5v13"></path><path d="M10 21v-6h4v6"></path></svg>
+          <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 20px">Todo queda en tu casa</h3>
+          <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #C3CCD4">Cuando es posible, trabajo dentro de tus propias cuentas y herramientas. Las apps, paneles y el código son tuyos desde la entrega.</p>
+        </div>
+        <div class="reveal lift" style="background: #17283A; border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 12px">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#F2B544" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16"></path><path d="M10 11v6M14 11v6"></path><path d="M6 7l1 13a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1l1-13"></path><path d="M9 7V4h6v3"></path></svg>
+          <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 20px">Borrado al terminar</h3>
+          <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #C3CCD4">Al cerrar el proyecto elimino todas las copias de tus datos y te lo confirmo por escrito. Nunca los comparto ni los uso para otros clientes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRECIOS -->
+  <section id="precios" style="background: #F4F6F6">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 48px">
+      <div class="from-left" style="display: flex; flex-direction: column; gap: 14px; max-width: 680px">
+        <span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #0F766E">Precios</span>
+        <h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(32px, 3.6vw, 46px); line-height: 1.1; letter-spacing: -0.02em">Elige cómo empezar</h2>
+        <p style="margin: 0; font-size: 16px; color: #5A6772">Precios orientativos sin IVA. Cada proyecto lleva un presupuesto cerrado antes de empezar. ¿Necesitas una app a medida? Te la presupuesto según lo que necesite tu negocio.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; align-items: stretch">
+        <div class="reveal lift" style="background: #FFFFFF; border: 1px solid #E4E7EA; border-radius: 18px; padding: 32px; display: flex; flex-direction: column; gap: 18px">
+          <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 22px">Diagnóstico</h3>
+          <p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 34px; font-weight: 700"><span style="font-size: 16px; font-weight: 500; color: #5A6772">desde </span>400 €</p>
+          <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #44515C">Reviso tus datos y te entrego un informe con 3–5 hallazgos y qué hacer con ellos.</p>
+          <a href="#contacto" style="margin-top: auto; text-decoration: none; text-align: center; border: 1.5px solid #0E1A24; padding: 14px; border-radius: 12px; font-weight: 600; min-height: 44px; box-sizing: border-box">Lo quiero</a>
+        </div>
+        <div class="reveal lift" style="background: #0E1A24; color: #FFFFFF; border-radius: 18px; padding: 32px; display: flex; flex-direction: column; gap: 18px">
+          <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px">
+            <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 22px">Cuadro de mando</h3>
+            <span style="font-size: 12px; font-weight: 600; background: #F2B544; color: #0E1A24; padding: 5px 10px; border-radius: 999px">El más pedido</span>
+          </div>
+          <p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 34px; font-weight: 700"><span style="font-size: 16px; font-weight: 500; color: #9AA7B2">desde </span>1.200 €</p>
+          <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #C3CCD4">Panel en Power BI conectado a tus datos, con actualización automática y una sesión de formación.</p>
+          <a href="#contacto" style="margin-top: auto; text-decoration: none; text-align: center; color: #FFFFFF; background: #0F766E; padding: 14px; border-radius: 12px; font-weight: 600; min-height: 44px; box-sizing: border-box">Lo quiero</a>
+        </div>
+        <div class="reveal lift" style="background: #FFFFFF; border: 1px solid #E4E7EA; border-radius: 18px; padding: 32px; display: flex; flex-direction: column; gap: 18px">
+          <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 22px">Soporte mensual</h3>
+          <p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 34px; font-weight: 700"><span style="font-size: 16px; font-weight: 500; color: #5A6772">desde </span>250 €<span style="font-size: 16px; font-weight: 500; color: #5A6772"> /mes</span></p>
+          <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #44515C">Mantenimiento de tus informes, nuevos indicadores y una revisión de resultados al mes.</p>
+          <a href="#contacto" style="margin-top: auto; text-decoration: none; text-align: center; border: 1.5px solid #0E1A24; padding: 14px; border-radius: 12px; font-weight: 600; min-height: 44px; box-sizing: border-box">Lo quiero</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" style="max-width: 1200px; margin: 0 auto; padding: 96px 24px; display: flex; flex-wrap: wrap; gap: 56px">
+    <div style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
+      <span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #0F766E">Contacto</span>
+      <h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(32px, 3.6vw, 46px); line-height: 1.1; letter-spacing: -0.02em">¿Qué pregunta te gustaría que respondieran tus datos?</h2>
+      <p style="margin: 0; font-size: 18px; line-height: 1.6; color: #44515C">Cuéntamelo y te respondo en menos de 48 horas. Trabajo en remoto con negocios de toda España y en persona en la Comunitat Valenciana.</p>
+      <div style="display: flex; flex-direction: column; gap: 10px; font-size: 16px; padding-top: 6px">
+        <a href="mailto:rb@rominabuigues.es" style="font-weight: 600">rb@rominabuigues.es</a>
+        <a href="https://linkedin.com/" style="font-weight: 600">LinkedIn · [TU PERFIL]</a>
+        <a href="https://github.com/roabuigues82-eng" style="font-weight: 600">GitHub · roabuigues82-eng</a>
+      </div>
+    </div>
+    <form id="contact-form" class="from-right" style="flex: 1 1 440px; min-width: 0; display: flex; flex-direction: column; gap: 18px; background: #F4F6F6; border-radius: 18px; padding: 32px">
+      <label for="c-nombre" style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; font-weight: 600">Nombre
+        <input id="c-nombre" name="nombre" required type="text" placeholder="Tu nombre" style="font: inherit; font-weight: 400; font-size: 16px; padding: 13px 14px; border: 1px solid #C9D0D6; border-radius: 10px; background: #FFFFFF">
+      </label>
+      <label for="c-email" style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; font-weight: 600">Email
+        <input id="c-email" name="email" required type="email" placeholder="tu@negocio.com" style="font: inherit; font-weight: 400; font-size: 16px; padding: 13px 14px; border: 1px solid #C9D0D6; border-radius: 10px; background: #FFFFFF">
+      </label>
+      <label for="c-negocio" style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; font-weight: 600">Tipo de negocio
+        <input id="c-negocio" name="negocio" type="text" placeholder="Tienda, restaurante, alojamiento…" style="font: inherit; font-weight: 400; font-size: 16px; padding: 13px 14px; border: 1px solid #C9D0D6; border-radius: 10px; background: #FFFFFF">
+      </label>
+      <label for="c-msg" style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; font-weight: 600">¿Qué necesitas?
+        <textarea id="c-msg" name="mensaje" required rows="4" placeholder="Ej.: quiero saber qué días y productos me dejan más margen" style="font: inherit; font-weight: 400; font-size: 16px; padding: 13px 14px; border: 1px solid #C9D0D6; border-radius: 10px; background: #FFFFFF; resize: vertical"></textarea>
+      </label>
+      <button type="submit" style="font: inherit; font-weight: 600; font-size: 16px; color: #FFFFFF; background: #0F766E; border: 0; padding: 16px; border-radius: 12px; min-height: 44px; cursor: pointer">Enviar mensaje</button>
+      <p id="form-msg" class="form-msg" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="border-top: 1px solid #E4E7EA">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 28px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 14px; color: #5A6772">
+      <span>© 2026 Romina Buigues · Análisis de datos y Business Intelligence</span>
+      <span>Valencia · Remoto en toda España</span>
+    </div>
+  </footer>
+
+</div>
+<script>
+/* ===== CONFIGURACIÓN ===== */
+const CONFIG = {
+  email: "rb@rominabuigues.es",      // ← tu email de contacto
+  formEndpoint: ""          // ← opcional: URL de Formspree (https://formspree.io/f/xxxx). Vacío = abre el correo del visitante
+};
+/* ========================= */
+(function(){
+  const form=document.getElementById('contact-form');
+  const msg=document.getElementById('form-msg');
+  document.querySelectorAll('a[href^="mailto:"]').forEach(a=>{a.href='mailto:'+CONFIG.email;a.textContent=CONFIG.email;});
+  form.addEventListener('submit',async e=>{
+    e.preventDefault();
+    const d=new FormData(form);
+    if(CONFIG.formEndpoint){
+      msg.textContent='Enviando…';
+      try{
+        const r=await fetch(CONFIG.formEndpoint,{method:'POST',body:d,headers:{Accept:'application/json'}});
+        if(!r.ok) throw 0;
+        form.reset(); msg.style.color='#0F766E'; msg.textContent='¡Gracias! Te respondo en menos de 48 horas.';
+      }catch(_ ){ msg.style.color='#B42318'; msg.textContent='No se pudo enviar. Escríbeme a '+CONFIG.email; }
+    } else {
+      const body=`Nombre: ${d.get('nombre')}\nEmail: ${d.get('email')}\nNegocio: ${d.get('negocio')}\n\n${d.get('mensaje')}`;
+      location.href='mailto:'+CONFIG.email+'?subject='+encodeURIComponent('Consulta desde la web – '+(d.get('negocio')||d.get('nombre')))+'&body='+encodeURIComponent(body);
+      msg.style.color='#0F766E'; msg.textContent='Se ha abierto tu correo con el mensaje listo para enviar.';
+    }
+  });
+})();
+</script>
+</body>
+</html>
